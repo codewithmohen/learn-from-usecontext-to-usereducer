@@ -3,10 +3,10 @@ import { createContext } from "react";
 
 
 interface Type {
-  data: string;
-  setData: React.Dispatch<React.SetStateAction<string>>;
-  setData2: React.Dispatch<React.SetStateAction<string>>;
+  data3: string;
   setData3: React.Dispatch<React.SetStateAction<string>>;
+  setData3B: React.Dispatch<React.SetStateAction<string>>;
+  setData3C: React.Dispatch<React.SetStateAction<string>>;
   clearData: React.Dispatch<React.SetStateAction<string>>;
   resetData: React.Dispatch<React.SetStateAction<string>>;
 }
@@ -14,10 +14,10 @@ interface Type {
 export const defaultDataValue = 'Default Value';
 
 const Initialize: Type = {
-  data: '',
-  setData: () => { },
-  setData2: () => { },
+  data3: '',
   setData3: () => { },
+  setData3B: () => { },
+  setData3C: () => { },
   clearData: () => { },
   resetData: () => { }
 };

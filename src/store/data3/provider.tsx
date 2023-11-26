@@ -2,32 +2,32 @@
 import { useEffect, useState } from "react";
 import { DataContext3, defaultDataValue } from "./context";
 
-const DataContextProvider2: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [data, setData] = useState<string>('defaultDataValue');
+const DataContextProvider3: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [data3, setData3] = useState<string>('defaultDataValue');
   useEffect(() => {
     function getInitialState() {
-      return JSON.parse(localStorage.getItem('data') || '');
+      return localStorage.getItem('data3') || '';
     }
     // read data from localstorage
     // localStorage.setItem('data', JSON.stringify(data)s);
     // if localstorage changed
     window.addEventListener('storage', () => {
-      setData(getInitialState);
+      setData3(getInitialState);
     });
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('data', data);
-  }, [data]);
+    localStorage.setItem('data3', data3);
+  }, [data3]);
 
-  const setData2 = () => {
+  const setData3B = () => {
   }
 
-  const setData3 = () => {
+  const setData3C = () => {
   }
 
   const resetData = () => {
-    return (defaultDataValue);
+    // return (defaultDataValue);
   }
 
   const clearData = () => {
@@ -35,10 +35,10 @@ const DataContextProvider2: React.FC<{ children: React.ReactNode }> = ({ childre
   }
 
   return (
-    <DataContext3.Provider value={{ data: data, setData: setData, setData2: setData2, setData3: setData3, clearData: clearData, resetData: resetData }}>
+    <DataContext3.Provider value={{ data3: data3, setData3: setData3, setData3B: setData3B, setData3C: setData3C, clearData: clearData, resetData: resetData }}>
       {children}
     </DataContext3.Provider>
   )
 }
 
-export default DataContextProvider2;
+export default DataContextProvider3;

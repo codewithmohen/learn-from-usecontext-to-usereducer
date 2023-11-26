@@ -6,29 +6,29 @@ export default function Home() {
 
   const dataManager = useContext(DataContext3);
   useEffect(() => {
-    console.log(dataManager.data);
-  }, [dataManager.data]);
+    console.log(dataManager.data3);
+  }, [dataManager.data3]);
   return (
     <>
       <div>
-        <label htmlFor='#setState'>setState: </label>
+        <label htmlFor='setState'>setState: </label>
       </div >
       <div>
-        <input id='setState' onChange={e => dataManager.setData(e.target.value)}></input>
-      </div >
-      <br />
-      <div>
-        <label htmlFor='#setState2'>setState2: </label>
-      </div >
-      <div>
-        <input id='setState2' onChange={e => dataManager.setData(e.target.value)}></input>
+        <input id='setState' onChange={e => dataManager.setData3(e.target.value)}></input>
       </div >
       <br />
       <div>
-        <label htmlFor='#setState3'>setState3: </label>
+        <label htmlFor='setStateB'>setState B: </label>
       </div >
       <div>
-        <input id='setState3' onChange={e => dataManager.setData(e.target.value)}></input>
+        <input id='setStateB' onChange={e => dataManager.setData3B(e.target.value)}></input>
+      </div >
+      <br />
+      <div>
+        <label htmlFor='setStateC'>setState C: </label>
+      </div >
+      <div>
+        <input id='setStateC' onChange={e => dataManager.setData3C(e.target.value)}></input>
       </div >
       <br />
       <div>
@@ -43,7 +43,7 @@ export default function Home() {
         <label htmlFor='get'>Read From Context: </label>
       </div>
       <div>
-        <input id='get' value={dataManager.data} readOnly={true}></input>
+        <input id='get' value={dataManager.data3} readOnly={true}></input>
       </div >
     </>
   )

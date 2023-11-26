@@ -3,23 +3,24 @@ import { useEffect, useState } from "react";
 import { DataContext2 } from "./context";
 
 const DataContextProvider2: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-
   const [data2, setData2] = useState<string>('');
-
+  const [isFirstTime, setIsFirstTime] = useState<boolean>(true);
   useEffect(() => {
     function getInitialState() {
-      return JSON.parse(localStorage.getItem('data2') || '');
+      return localStorage.getItem('data2') || '';
     }
-    // read data from localstorage
-    // localStorage.setItem('data', JSON.stringify(data)s);
-    // if localstorage changed
+    setData2(getInitialState());
+
     window.addEventListener('storage', () => {
-      setData2(getInitialState);
+      setData2(getInitialState());
     });
+    setIsFirstTime(false);
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('data2', data2);
+    if (!isFirstTime) { // not exist or empty
+      localStorage.setItem('data2', data2);
+    }
   }, [data2]);
 
   return (
