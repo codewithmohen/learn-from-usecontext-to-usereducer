@@ -3,7 +3,6 @@ import { DataContext2 } from '@/store/data2/context';
 import { useContext } from 'react';
 
 export default function Home() {
-  //moghe ee ke load mishe data2 khalie aval!
   const dataManager = useContext(DataContext2);
   return (
     <>
@@ -11,8 +10,6 @@ export default function Home() {
         <label htmlFor='set'>Set To Context: </label>
       </div >
       <div>
-
-        {/* <input id='set' value={dataManager.data2} onChange={e => dataManager.setData2('x')}></input> */}
         <input id='set' value={dataManager.data2} onChange={e => dataManager.setData2(e.target.value)}></input>
       </div >
       <br />

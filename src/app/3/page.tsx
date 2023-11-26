@@ -3,18 +3,14 @@ import { DataContext3 } from '@/store/data3/context';
 import { useContext, useEffect } from 'react';
 
 export default function Home() {
-
   const dataManager = useContext(DataContext3);
-  useEffect(() => {
-    console.log(dataManager.data3);
-  }, [dataManager.data3]);
   return (
     <>
       <div>
         <label htmlFor='setState'>setState: </label>
       </div >
       <div>
-        <input id='setState' onChange={e => dataManager.setData3(e.target.value)}></input>
+        <input id='setState' value={dataManager.data3} onChange={e => dataManager.setData3(e.target.value)}></input>
       </div >
       <br />
       <div>
@@ -32,11 +28,11 @@ export default function Home() {
       </div >
       <br />
       <div>
-        <input id='resetData' type='button' value='resetData'></input>
+        <input id='resetData' type='button' value='resetData' onClick={e => dataManager.resetData}></input>
       </div >
       <br />
       <div>
-        <input id='clearData' type='button' value='clearData'></input>
+        <input id='clearData' type='button' value='clearData' onClick={e => dataManager.clearData}></input>
       </div >
       <br />
       <div>

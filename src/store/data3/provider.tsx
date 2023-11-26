@@ -3,22 +3,26 @@ import { useEffect, useState } from "react";
 import { DataContext3, defaultDataValue } from "./context";
 
 const DataContextProvider3: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [data3, setData3] = useState<string>('defaultDataValue');
+  const [data3, setData3] = useState<string>('');
+  const [isFirstTime, setIsFirstTime] = useState<boolean>(true);
   useEffect(() => {
     function getInitialState() {
       return localStorage.getItem('data3') || '';
     }
-    // read data from localstorage
-    // localStorage.setItem('data', JSON.stringify(data)s);
-    // if localstorage changed
+    setData3(getInitialState());
+
     window.addEventListener('storage', () => {
-      setData3(getInitialState);
+      setData3(getInitialState());
     });
+    setIsFirstTime(false);
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('data3', data3);
+    if (!isFirstTime) { // not exist or empty
+      localStorage.setItem('data3', data3);
+    }
   }, [data3]);
+
 
   const setData3B = () => {
   }
@@ -27,7 +31,7 @@ const DataContextProvider3: React.FC<{ children: React.ReactNode }> = ({ childre
   }
 
   const resetData = () => {
-    // return (defaultDataValue);
+    return (defaultDataValue);
   }
 
   const clearData = () => {
