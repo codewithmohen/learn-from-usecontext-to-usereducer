@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { DataContext } from "./context";
+import { DataContext1 } from "./context";
 
 const DataContextProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [data, setData] = useState<string>('');
+  const [data1, setData1] = useState<string>('');
   return (
-    <DataContext.Provider value={{ data: data, setData: setData }}>
+    <DataContext1.Provider value={{ data1: data1, setData1: setData1 }}>
       {children}
-    </DataContext.Provider>
+    </DataContext1.Provider>
   )
 }
 

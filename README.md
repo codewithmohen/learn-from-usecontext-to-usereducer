@@ -26,3 +26,13 @@ $ npm i
 
 npm run dev
 http://localhost:3000
+
+# References:
+
+https://github.com/Medic1111/monstera-shop-client-only-typescript
+You're importing a component that needs createContext. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default (https://nextjs.org/docs/getting-started/react-essential)
+https://stackoverflow.com/questions/62420064/usecontext-values-gets-cleared-during-page-refresh-and-logout
+https://stackoverflow.com/questions/62896954/how-to-instantly-update-state-when-any-changes-into-the-localstorage-in-react-js
+https://stackoverflow.com/questions/52474208/react-localstorage-is-not-defined-error-showing
+
+https://developer.school/snippets/react/localstorage-is-not-defined-nextjs
