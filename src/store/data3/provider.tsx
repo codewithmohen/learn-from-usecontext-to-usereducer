@@ -24,18 +24,20 @@ const DataContextProvider3: React.FC<{ children: React.ReactNode }> = ({ childre
   }, [data3]);
 
 
-  const setData3B = () => {
+  const setData3B = (input: string) => {
+    setData3(input);
   }
 
-  const setData3C = () => {
+  const setData3C = (input: string) => {
+    setData3(prev => { return input });
   }
 
   const resetData = () => {
-    return (defaultDataValue);
+    setData3(() => { return defaultDataValue });
   }
 
   const clearData = () => {
-    return ('');
+    setData3(() => { return '' });
   }
 
   return (

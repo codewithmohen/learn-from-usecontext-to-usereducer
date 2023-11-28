@@ -5,10 +5,10 @@ import { createContext } from "react";
 interface Type {
   data3: string;
   setData3: React.Dispatch<React.SetStateAction<string>>;
-  setData3B: React.Dispatch<React.SetStateAction<string>>;
-  setData3C: React.Dispatch<React.SetStateAction<string>>;
-  clearData: React.Dispatch<React.SetStateAction<string>>;
-  resetData: React.Dispatch<React.SetStateAction<string>>;
+  setData3B: (input: string) => void;
+  setData3C: (input: string) => void;
+  clearData: () => void;
+  resetData: () => void;
 }
 
 export const defaultDataValue = 'Default Value';

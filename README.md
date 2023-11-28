@@ -27,12 +27,35 @@ $ npm i
 npm run dev
 http://localhost:3000
 
-# References:
+#Thaks to
 
 https://github.com/Medic1111/monstera-shop-client-only-typescript
-You're importing a component that needs createContext. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default (https://nextjs.org/docs/getting-started/react-essential)
-https://stackoverflow.com/questions/62420064/usecontext-values-gets-cleared-during-page-refresh-and-logout
-https://stackoverflow.com/questions/62896954/how-to-instantly-update-state-when-any-changes-into-the-localstorage-in-react-js
-https://stackoverflow.com/questions/52474208/react-localstorage-is-not-defined-error-showing
 
+#Challenges
+
+##problem:
+what is use client?
+##solution:
+https://react.dev/reference/react/use-client
+https://nextjs.org/docs/app/building-your-application/rendering/client-components
+
+##problem:
+useContext values gets cleared during page refresh and logout!
+##solution:
+https://stackoverflow.com/questions/62420064/usecontext-values-gets-cleared-during-page-refresh-and-logout
+
+##problem:
+How to instantly update state when any changes into the localstorage in React.js?
+##solution:
+https://stackoverflow.com/questions/62896954/how-to-instantly-update-state-when-any-changes-into-the-localstorage-in-react-js
+
+##problem:
+How to Fix "localStorage is not defined" in Next.js?
+##solution:
+https://stackoverflow.com/questions/52474208/react-localstorage-is-not-defined-error-showing
 https://developer.school/snippets/react/localstorage-is-not-defined-nextjs
+
+##problem:
+Why we need to pass a function to React setState() method?
+##solution:
+https://iq.js.org/questions/react/why-we-need-to-pass-a-function-to-setstate#

@@ -17,22 +17,22 @@ export default function Home() {
         <label htmlFor='setStateB'>setState B: </label>
       </div >
       <div>
-        <input id='setStateB' onChange={e => dataManager.setData3B(e.target.value)}></input>
+        <input id='setStateB' value={dataManager.data3} onChange={e => dataManager.setData3B(e.target.value)}></input>
       </div >
       <br />
       <div>
         <label htmlFor='setStateC'>setState C: </label>
       </div >
       <div>
-        <input id='setStateC' onChange={e => dataManager.setData3C(e.target.value)}></input>
+        <input id='setStateC' value={dataManager.data3} onChange={e => dataManager.setData3C(e.target.value)}></input>
       </div >
       <br />
       <div>
-        <input id='resetData' type='button' value='resetData' onClick={e => dataManager.resetData}></input>
+        <input id='resetData' type='button' value='resetData' onClick={e => dataManager.resetData()}></input>
       </div >
       <br />
       <div>
-        <input id='clearData' type='button' value='clearData' onClick={e => dataManager.clearData}></input>
+        <input id='clearData' type='button' value='clearData' onClick={e => dataManager.clearData()}></input>
       </div >
       <br />
       <div>
