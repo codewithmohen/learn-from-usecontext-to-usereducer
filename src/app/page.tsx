@@ -5,15 +5,24 @@ export default function Home() {
   return (
     <>
       <ol>
-        <li>
-          <Link href='/1'>Simple String State + hook setState</Link>
+        <li> props </li>
+        <li> useState </li>
+        <li> useContext
+          <ol>
+            <li>
+              <Link href='/3-usecontext/1'>Simple String State + hook setState</Link>
+            </li>
+            <li>
+              <Link href='/3-usecontext/2'>Simple String State + hook setState + localStorage</Link>
+            </li>
+            <li>
+              <Link href='/3-usecontext/3'>Simple String State + Multiple Functions + localStorage</Link>
+            </li>
+          </ol>
         </li>
-        <li>
-          <Link href='/2'>Simple String State + hook setState + localStorage</Link>
-        </li>
-        <li>
-          <Link href='/3'>Simple String State + Multiple Functions + localStorage</Link>
-        </li>
+        <li> useReducer </li>
+        <li> Redux </li>
+        <li> Saga </li>
       </ol>
     </>
   )

@@ -1,7 +1,7 @@
 'use client'
-import DataContextProvider1 from "@/store/data1/provider"
-import DataContextProvider2 from "@/store/data2/provider"
-import DataContextProvider3 from "@/store/data3/provider"
+import DataContextProvider1 from "@/store/3-usecontext/data1/provider"
+import DataContextProvider2 from "@/store/3-usecontext/data2/provider"
+import DataContextProvider3 from "@/store/3-usecontext/data3/provider"
 
 export default function RootLayout({
   children,

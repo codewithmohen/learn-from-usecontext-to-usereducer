@@ -1,5 +1,5 @@
 'use client'
-import { DataContext2 } from '@/store/data2/context';
+import { DataContext2 } from '@/store/3-usecontext/data2/context';
 import { useContext } from 'react';
 
 export default function Home() {

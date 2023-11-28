@@ -1,5 +1,5 @@
 'use client'
-import { DataContext1 } from '@/store/data1/context';
+import { DataContext1 } from '@/store/3-usecontext/data1/context';
 import Image from 'next/image'
 import { useContext, useEffect } from 'react';
 

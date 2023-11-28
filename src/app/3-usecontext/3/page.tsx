@@ -1,5 +1,5 @@
 'use client'
-import { DataContext3 } from '@/store/data3/context';
+import { DataContext3 } from '@/store/3-usecontext/data3/context';
 import { useContext, useEffect } from 'react';
 
 export default function Home() {
