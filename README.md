@@ -58,4 +58,21 @@ https://developer.school/snippets/react/localstorage-is-not-defined-nextjs
 ##problem:
 Why we need to pass a function to React setState() method?
 ##solution:
-https://iq.js.org/questions/react/why-we-need-to-pass-a-function-to-setstate#
+https://iq.js.org/questions/react/why-we-need-to-pass-a-function-to-setstate
+
+##problem:
+using useContext with custom hooks vs useContext + useReducer
+##solution:
+https://dev.to/clickpesa/react-manage-state-using-context-api-with-usestate-or-usereducer-hooks-d5l
+https://stackoverflow.com/questions/70455690/using-usecontext-with-custom-hooks-vs-usecontext-usereducer
+
+##problem:
+useContext + useReducer
+##solution:
+https://designcode.io/react-hooks-handbook-usereducer-with-usecontext-1
+https://designcode.io/react-hooks-handbook-usereducer-with-usecontext-2
+
+##problem:
+useReducer vs Redux
+##solution:
+https://blog.saeloun.com/2023/08/31/react-state-management-usereducer-vs-redux/
