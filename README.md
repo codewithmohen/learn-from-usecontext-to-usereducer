@@ -27,52 +27,76 @@ $ npm i
 npm run dev
 http://localhost:3000
 
-#Thaks to
+# Thanks to
 
 https://github.com/Medic1111/monstera-shop-client-only-typescript
 
-#Challenges
+## Challenges
 
-##problem:
+### problem:
+
 what is use client?
-##solution:
+
+### solution:
+
 https://react.dev/reference/react/use-client
 https://nextjs.org/docs/app/building-your-application/rendering/client-components
 
-##problem:
+### problem:
+
 useContext values gets cleared during page refresh and logout!
-##solution:
+
+### solution:
+
 https://stackoverflow.com/questions/62420064/usecontext-values-gets-cleared-during-page-refresh-and-logout
 
-##problem:
+### problem:
+
 How to instantly update state when any changes into the localstorage in React.js?
-##solution:
+
+### solution:
+
 https://stackoverflow.com/questions/62896954/how-to-instantly-update-state-when-any-changes-into-the-localstorage-in-react-js
 
-##problem:
+### problem:
+
 How to Fix "localStorage is not defined" in Next.js?
-##solution:
+
+### solution:
+
 https://stackoverflow.com/questions/52474208/react-localstorage-is-not-defined-error-showing
 https://developer.school/snippets/react/localstorage-is-not-defined-nextjs
 
-##problem:
+### problem:
+
 Why we need to pass a function to React setState() method?
-##solution:
+
+### solution:
+
 https://iq.js.org/questions/react/why-we-need-to-pass-a-function-to-setstate
 
-##problem:
+### problem:
+
 using useContext with custom hooks vs useContext + useReducer
-##solution:
+
+### solution:
+
 https://dev.to/clickpesa/react-manage-state-using-context-api-with-usestate-or-usereducer-hooks-d5l
 https://stackoverflow.com/questions/70455690/using-usecontext-with-custom-hooks-vs-usecontext-usereducer
 
-##problem:
+### problem:
+
 useContext + useReducer
-##solution:
+
+### solution:
+
 https://designcode.io/react-hooks-handbook-usereducer-with-usecontext-1
 https://designcode.io/react-hooks-handbook-usereducer-with-usecontext-2
 
-##problem:
+### problem:
+
 useReducer vs Redux
-##solution:
+
+### solution:
+
 https://blog.saeloun.com/2023/08/31/react-state-management-usereducer-vs-redux/
