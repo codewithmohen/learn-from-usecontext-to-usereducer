@@ -1,0 +1,6 @@
+
+No overload matches this call.
+  Overload 1 of 5, '(reducer: ReducerWithoutAction<any>, initializerArg: any, initializer?: undefined): [any, DispatchWithoutAction]', 
+  gave the following error.
+    Argument of type '(state: St/ate, action: Action) => { data: string; data1: string; }' is not assignable to parameter of type 'ReducerWithoutAction<any>'.
+    Target signature provides too few arguments. Expected 2 or more, but got 1.
