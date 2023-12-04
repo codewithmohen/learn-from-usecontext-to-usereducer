@@ -1,35 +1,58 @@
 
 import { useEffect, useReducer, useState } from "react";
 import { DataContext4 } from "./context";
-import reducer, { InitialState } from "./reducer";
+import { reducer, Initial_State, ActionType } from "./reducer";
 
 const DataContextProvider4 = ({ children }: { children: React.ReactNode }) => {
-  const [state, dispatch] = useReducer(reducer, InitialState);
-  const [data3, setData3] = useState<string>('');
+  const [state, dispatch] = useReducer(reducer, Initial_State);
   const [isFirstTime, setIsFirstTime] = useState<boolean>(true);
   useEffect(() => {
     function getInitialState() {
-      return localStorage.getItem('data3') || '';
+      dispatch({ type: ActionType.RESET_DATA, payload: '' })
     }
-    setData3(getInitialState());
+    getInitialState();
     window.addEventListener('storage', () => {
-      setData3(getInitialState());
+      getInitialState();
     });
     setIsFirstTime(false);
   }, []);
 
   useEffect(() => {
     if (!isFirstTime) { // not exist or empty
-      localStorage.setItem('data3', data3);
+      localStorage.setItem('data1', state.data1);
     }
-  }, [data3]);
+  }, [state.data1]);
+
+  const setData1 = (input: string) => {
+    dispatch({ type: ActionType.SET_STATE, payload: 'input' })
+  }
+
+  const resetData = () => {
+    dispatch({ type: ActionType.RESET_DATA, payload: '' });
+  }
+
+  const clearData = () => {
+    dispatch({ type: ActionType.CLEAN_DATA, payload: '' });
+  }
+
+
+  const value = {
+    data1: state.data1,
+    setData1: (payload: string) => {
+      dispatch({ type: ActionType.SET_STATE, payload })
+    },
+    resetData: () => {
+      dispatch({ type: ActionType.RESET_DATA, payload: '' });
+    },
+    clearData: () => {
+      dispatch({ type: ActionType.CLEAN_DATA, payload: '' });
+    }
+  };
+
   return (
-    <>
+    <DataContext4.Provider value={value}>
       {children}
-    </>
-    // <DataContext4.Provider value={{ data1: data1, setData3: setData3, setData3B: setData3B, setData3C: setData3C, clearData: clearData, resetData: resetData }}>
-    //   {children}
-    // </DataContext4.Provider>
+    </DataContext4.Provider >
   )
 }
 
