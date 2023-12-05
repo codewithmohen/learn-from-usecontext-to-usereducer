@@ -10,16 +10,18 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <DataContextProvider4>
-      <DataContextProvider1>
-        <DataContextProvider2>
-          <DataContextProvider3>
+
+    <DataContextProvider1>
+      <DataContextProvider2>
+        <DataContextProvider3>
+          <DataContextProvider4>
             <html lang="en">
               <body>{children}</body>
             </html>
-          </DataContextProvider3>
-        </DataContextProvider2>
-      </DataContextProvider1>
-    </DataContextProvider4>
+          </DataContextProvider4>
+        </DataContextProvider3>
+      </DataContextProvider2>
+    </DataContextProvider1>
+
   )
 }

@@ -10,7 +10,7 @@ interface ContextValue {
 }
 
 export const DataContext4 = createContext<ContextValue>({
-  data4: Initial_State.data4,
+  data4: '',
   setData: () => { },
   resetData: () => { },
   clearData: () => { }
