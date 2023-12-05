@@ -1,5 +1,5 @@
 'use client'
-import { DataContext4 } from '@/store/4-usereducer/data1/context';
+import { DataContext4 } from '@/store/4-usereducer/data4/context';
 import { useContext, useEffect } from 'react';
 
 export default function Home() {
