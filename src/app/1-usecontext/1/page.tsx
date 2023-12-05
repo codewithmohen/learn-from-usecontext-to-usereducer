@@ -1,9 +1,8 @@
 'use client'
-import { DataContext1 } from '@/store/3-usecontext/data1/context';
-import Image from 'next/image'
-import { useContext, useEffect } from 'react';
+import { DataContext } from '@/store/1-usecontext/data1/context';
+import { useContext } from 'react';
 export default function Home() {
-  const dataManager = useContext(DataContext1);
+  const dataManager = useContext(DataContext);
   return (
     <>
       <div>

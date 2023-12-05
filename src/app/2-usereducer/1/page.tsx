@@ -1,9 +1,9 @@
 'use client'
-import { DataContext4 } from '@/store/4-usereducer/data4/context';
-import { useContext, useEffect } from 'react';
+import { DataContext } from '@/store/2-usereducer/data4/context';
+import { useContext } from 'react';
 
 export default function Home() {
-  const dataManager = useContext(DataContext4);
+  const dataManager = useContext(DataContext);
   return (
     <>
       <div>

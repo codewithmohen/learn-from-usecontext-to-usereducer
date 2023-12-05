@@ -1,9 +1,9 @@
 'use client'
-import { DataContext3 } from '@/store/3-usecontext/data3/context';
-import { useContext, useEffect } from 'react';
+import { DataContext } from '@/store/1-usecontext/data3/context';
+import { useContext } from 'react';
 
 export default function Home() {
-  const dataManager = useContext(DataContext3);
+  const dataManager = useContext(DataContext);
   return (
     <>
       <div>

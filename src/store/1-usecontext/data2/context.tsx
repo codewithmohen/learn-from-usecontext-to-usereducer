@@ -1,14 +1,10 @@
-
 import { createContext } from "react";
-
-interface Type {
+interface IContext {
   data2: string;
   setData2: React.Dispatch<React.SetStateAction<string>>;
 }
-
-const Initialize: Type = {
+const Initialize: IContext = {
   data2: '',
   setData2: () => { }
 };
-
-export const DataContext2 = createContext<Type>(Initialize);
+export const DataContext = createContext<IContext>(Initialize);

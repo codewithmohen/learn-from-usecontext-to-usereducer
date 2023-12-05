@@ -1,6 +1,6 @@
 
 import { useEffect, useReducer, useState } from "react";
-import { DataContext4 } from "./context";
+import { DataContext } from "./context";
 import { reducer, Initial_State, ActionType } from "./reducer";
 
 const DataContextProvider4 = ({ children }: { children: React.ReactNode }) => {
@@ -24,19 +24,6 @@ const DataContextProvider4 = ({ children }: { children: React.ReactNode }) => {
       localStorage.setItem('data4', state.data4);
     }
   }, [state.data4]);
-
-  const setData1 = (input: string) => {
-    dispatch({ type: ActionType.SET_STATE, payload: 'input' })
-  }
-
-  const resetData = () => {
-    dispatch({ type: ActionType.RESET_DATA, payload: '' });
-  }
-
-  const clearData = () => {
-    dispatch({ type: ActionType.CLEAN_DATA, payload: '' });
-  }
-
   const value = {
     data4: state.data4,
     setData: (payload: string) => {
@@ -49,12 +36,10 @@ const DataContextProvider4 = ({ children }: { children: React.ReactNode }) => {
       dispatch({ type: ActionType.CLEAN_DATA, payload: '' });
     }
   };
-
   return (
-    <DataContext4.Provider value={value}>
+    <DataContext.Provider value={value}>
       {children}
-    </DataContext4.Provider >
+    </DataContext.Provider >
   )
 }
-
 export default DataContextProvider4;

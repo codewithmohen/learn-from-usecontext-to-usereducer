@@ -8,7 +8,6 @@ export enum ActionType {
 }
 export interface IAction {
   type: ActionType;
-  // payload: IState;
   payload: string;
 }
 export const Initial_State: IState = { data4: 'Default Value' };

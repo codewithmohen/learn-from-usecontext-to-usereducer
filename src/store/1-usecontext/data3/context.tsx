@@ -1,8 +1,6 @@
 
 import { createContext } from "react";
-
-
-interface Type {
+interface IContext {
   data3: string;
   setData3: React.Dispatch<React.SetStateAction<string>>;
   setData3B: (input: string) => void;
@@ -10,10 +8,8 @@ interface Type {
   clearData: () => void;
   resetData: () => void;
 }
-
 export const defaultDataValue = 'Default Value';
-
-const Initialize: Type = {
+const Initialize: IContext = {
   data3: '',
   setData3: () => { },
   setData3B: () => { },
@@ -21,5 +17,4 @@ const Initialize: Type = {
   clearData: () => { },
   resetData: () => { }
 };
-
-export const DataContext3 = createContext<Type>(Initialize);
+export const DataContext = createContext<IContext>(Initialize);
