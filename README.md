@@ -1,4 +1,4 @@
-# learn_useContext
+# Learn from useContext to useReducer - As Easy As Possible!
 
 Professional learning NextJs useContext in the easiest possible way for those who have tried any other ways.
 
