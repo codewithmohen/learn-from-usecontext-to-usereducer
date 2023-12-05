@@ -1,10 +1,10 @@
 import { createContext } from 'react';
 interface IContext {
-  data1: string;
-  setData1: React.Dispatch<React.SetStateAction<string>>;
+  dataChallenge1: string;
+  setDataChallenge1: React.Dispatch<React.SetStateAction<string>>;
 }
 const Initialize: IContext = {
-  data1: '',
-  setData1: () => { },
+  dataChallenge1: '',
+  setDataChallenge1: () => { },
 };
 export const DataContext = createContext<IContext>(Initialize);

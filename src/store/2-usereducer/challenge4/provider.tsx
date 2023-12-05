@@ -8,7 +8,7 @@ const DataContextProvider4 = ({ children }: { children: React.ReactNode }) => {
   const [isFirstTime, setIsFirstTime] = useState<boolean>(true);
   useEffect(() => {
     function getInitialState() {
-      let storage = localStorage.getItem('data4') || '';
+      let storage = localStorage.getItem('dataChallenge4') || '';
       dispatch({ type: ActionType.SET_STATE, payload: storage })
       return storage;
     }
@@ -21,18 +21,18 @@ const DataContextProvider4 = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     if (!isFirstTime) { // not exist or empty
-      localStorage.setItem('data4', state.data4);
+      localStorage.setItem('dataChallenge4', state.dataChallenge4);
     }
-  }, [state.data4]);
+  }, [state.dataChallenge4]);
   const value = {
-    data4: state.data4,
-    setData: (payload: string) => {
+    dataChallenge4: state.dataChallenge4,
+    setDataChallenge4: (payload: string) => {
       dispatch({ type: ActionType.SET_STATE, payload })
     },
-    resetData: () => {
+    resetDataChallenge4: () => {
       dispatch({ type: ActionType.RESET_DATA, payload: '' });
     },
-    clearData: () => {
+    clearDataChallenge4: () => {
       dispatch({ type: ActionType.CLEAN_DATA, payload: '' });
     }
   };

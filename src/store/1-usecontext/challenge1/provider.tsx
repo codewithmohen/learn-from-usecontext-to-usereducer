@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { DataContext } from "./context";
-import { data1, setData1 } from "./state";
+import { state } from "./state";
 const DataContextProvider1: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [dataChallenge1, setDataChallenge1] = state();
   const value = {
-    data1: data1,
-    setData1: setData1,
+    dataChallenge1: dataChallenge1,
+    setDataChallenge1: setDataChallenge1,
   };
   return (
     <DataContext.Provider value={value}>

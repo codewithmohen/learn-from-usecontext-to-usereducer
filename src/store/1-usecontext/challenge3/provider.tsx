@@ -1,42 +1,43 @@
 import { useEffect, useState } from 'react';
 import { DataContext, defaultDataValue } from './context';
-import { data3, setData3 } from './state';
+import { state } from './state';
 const DataContextProvider3: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isFirstTime, setIsFirstTime] = useState<boolean>(true);
+  const [dataChallenge3, setDataChallenge3] = state();
   useEffect(() => {
     function getInitialState() {
-      return localStorage.getItem('data3') || '';
+      return localStorage.getItem('dataChallenge3') || '';
     }
-    setData3(getInitialState());
+    setDataChallenge3(getInitialState());
     window.addEventListener('storage', () => {
-      setData3(getInitialState());
+      setDataChallenge3(getInitialState());
     });
     setIsFirstTime(false);
   }, []);
   useEffect(() => {
     if (!isFirstTime) {
       // not exist or empty
-      localStorage.setItem('data3', data3);
+      localStorage.setItem('dataChallenge3', dataChallenge3);
     }
-  }, [data3]);
+  }, [dataChallenge3]);
   const value = {
-    data3: data3,
-    setData3: setData3,
-    setData3B: (input: string) => {
-      setData3(input);
+    dataChallenge3: dataChallenge3,
+    setDataChallenge3: setDataChallenge3,
+    setDataChallenge3_2: (input: string) => {
+      setDataChallenge3(input);
     },
-    setData3C: (input: string) => {
-      setData3((prev) => {
+    setDataChallenge3_3: (input: string) => {
+      setDataChallenge3((prev) => {
         return input;
       });
     },
-    resetData: () => {
-      setData3(() => {
+    resetDataChallenge3: () => {
+      setDataChallenge3(() => {
         return defaultDataValue;
       });
     },
-    clearData: () => {
-      setData3(() => {
+    clearDataChallenge3: () => {
+      setDataChallenge3(() => {
         return '';
       });
     },
