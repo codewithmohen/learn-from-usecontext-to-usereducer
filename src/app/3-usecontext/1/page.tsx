@@ -2,13 +2,10 @@
 import { DataContext1 } from '@/store/3-usecontext/data1/context';
 import Image from 'next/image'
 import { useContext, useEffect } from 'react';
-
 export default function Home() {
-
   const dataManager = useContext(DataContext1);
   return (
     <>
-
       <div>
         <label htmlFor='#set'>Set To Context: </label>
       </div >

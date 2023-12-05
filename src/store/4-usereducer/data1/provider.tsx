@@ -19,9 +19,9 @@ const DataContextProvider4 = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     if (!isFirstTime) { // not exist or empty
-      localStorage.setItem('data1', state.data1);
+      localStorage.setItem('data1', state.data4);
     }
-  }, [state.data1]);
+  }, [state.data4]);
 
   const setData1 = (input: string) => {
     dispatch({ type: ActionType.SET_STATE, payload: 'input' })
@@ -37,8 +37,8 @@ const DataContextProvider4 = ({ children }: { children: React.ReactNode }) => {
 
 
   const value = {
-    data1: state.data1,
-    setData1: (payload: string) => {
+    data4: state.data4,
+    setData: (payload: string) => {
       dispatch({ type: ActionType.SET_STATE, payload })
     },
     resetData: () => {
