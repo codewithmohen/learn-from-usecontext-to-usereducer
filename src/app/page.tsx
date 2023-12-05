@@ -21,8 +21,14 @@ export default function Home() {
           </ol>
         </li>
         <li> useReducer </li>
+        <ol>
+          <li>
+            <Link href='/3-usecontext/1'>Simple String State  + Multiple Functions + localStorage</Link>
+          </li>
+        </ol>
         <li> Redux </li>
-        <li> Saga </li>
+        <li> ReduxToolkit</li>
+        <li> ReduxSaga </li>
       </ol>
     </>
   )
