@@ -1,16 +1,20 @@
 import { useState } from "react";
 import { DataContext } from "./context";
 import { state } from "./state";
-const DataContextProvider1: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [dataChallenge1, setDataChallenge1] = state();
-  const value = {
-    dataChallenge1: dataChallenge1,
-    setDataChallenge1: setDataChallenge1,
+import { IContext } from "./interface";
+
+const Provider: React.FC<{ children: React.ReactNode; }> = ({ children }) => {
+  const [data, setData] = state();
+
+  const value: IContext = {
+    data: data,
+    setData: setData,
   };
+
   return (
     <DataContext.Provider value={value}>
       {children}
     </DataContext.Provider>
-  )
-}
-export default DataContextProvider1;
+  );
+};
+export default Provider;

@@ -1,20 +1,20 @@
-'use client'
-import DataContextProvider1 from "@/store/1-usecontext/challenge1/provider"
-import DataContextProvider2 from "@/store/1-usecontext/challenge2/provider"
-import DataContextProvider3 from "@/store/1-usecontext/challenge3/provider"
-import DataContextProvider4 from "@/store/2-usereducer/challenge4/provider"
-import './style.css'
+'use client';
+import { default as Provider1 } from "@/store/1-usecontext/challenge1/provider";
+import { default as Provider2 } from "@/store/1-usecontext/challenge2/provider";
+import { default as Provider3 } from "@/store/1-usecontext/challenge3/provider";
+import { default as Provider4 } from "@/store/2-usereducer/challenge4/provider";
+import './style.css';
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <DataContextProvider1>
-      <DataContextProvider2>
-        <DataContextProvider3>
-          <DataContextProvider4>
+    <Provider1>
+      <Provider2>
+        <Provider3>
+          <Provider4>
             <html lang="en">
               <body >
                 <div className='middle'>
@@ -24,10 +24,10 @@ export default function RootLayout({
                 </div>
               </body>
             </html>
-          </DataContextProvider4>
-        </DataContextProvider3>
-      </DataContextProvider2>
-    </DataContextProvider1>
+          </Provider4>
+        </Provider3>
+      </Provider2>
+    </Provider1>
 
-  )
+  );
 }

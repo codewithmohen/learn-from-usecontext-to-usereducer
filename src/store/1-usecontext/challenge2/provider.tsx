@@ -2,32 +2,37 @@
 import { useEffect, useState } from "react";
 import { DataContext } from "./context";
 import { state } from "./state";
-const DataContextProvider2: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [dataChallenge2, setDataChallenge2] = state();
+import { IContext } from "./interface";
+const Provider: React.FC<{ children: React.ReactNode; }> = ({ children }) => {
+  const [data, setData] = state();
   const [isFirstTime, setIsFirstTime] = useState<boolean>(true);
+
   useEffect(() => {
     function getInitialState() {
       return localStorage.getItem('dataChallenge2') || '';
     }
-    setDataChallenge2(getInitialState());
+    setData(getInitialState());
     window.addEventListener('storage', () => {
-      setDataChallenge2(getInitialState());
+      setData(getInitialState());
     });
     setIsFirstTime(false);
-  }, []);
+  }, [setData]);
+
   useEffect(() => {
     if (!isFirstTime) { // not exist or empty
-      localStorage.setItem('dataChallenge2', dataChallenge2);
+      localStorage.setItem('dataChallenge2', data);
     }
-  }, [dataChallenge2]);
-  const value = {
-    dataChallenge2: dataChallenge2,
-    setDataChallenge2: setDataChallenge2,
+  }, [data, isFirstTime]);
+
+  const value: IContext = {
+    data: data,
+    setData: setData,
   };
+
   return (
     <DataContext.Provider value={value}>
       {children}
     </DataContext.Provider >
-  )
-}
-export default DataContextProvider2;
+  );
+};
+export default Provider;

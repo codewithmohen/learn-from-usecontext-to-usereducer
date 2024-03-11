@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { DataContext } from '@/store/2-usereducer/challenge4/context';
 import { useContext } from 'react';
 
@@ -7,25 +7,28 @@ export default function Home() {
   return (
     <>
       <h1>2-useReducer / Challenge4</h1>
+      <p>Simple String State + Multiple Functions + localStorage</p>
       <div>
-        <label htmlFor='setState'>setDataChallenge4</label>
+        <label htmlFor='setState'>Write to set context</label>
       </div >
       <div>
-        <input id='setState' value={dataManager.dataChallenge4} onChange={e => dataManager.setDataChallenge4(e.target.value)}></input>
-      </div >
-      <br />
-      <div>
-        <input id='resetData' type='button' value='resetData' onClick={e => dataManager.resetDataChallenge4()}></input>
+        <input id='setState' value={dataManager.data} onChange={e => dataManager.setData(e.target.value)}></input>
       </div >
       <br />
       <div>
-        <input id='clearData' type='button' value='clearData' onClick={e => dataManager.clearDataChallenge4()}></input>
+        <input id='resetData' type='button' value='resetData' onClick={e => dataManager.resetData()}></input>
       </div >
       <br />
       <div>
-        <label htmlFor='get'>dataChallenge4</label>
-        <input id='get' value={dataManager.dataChallenge4} readOnly={true} disabled></input>
+        <input id='clearData' type='button' value='clearData' onClick={e => dataManager.clearData()}></input>
+      </div >
+      <br />
+      <div>
+        <label htmlFor='#get'>Context value is</label>
+      </div >
+      <div>
+        <input id='get' value={dataManager.data} readOnly={true} disabled></input>
       </div >
     </>
-  )
+  );
 }

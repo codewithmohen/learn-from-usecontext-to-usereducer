@@ -2,14 +2,16 @@
 import { useEffect, useReducer, useState } from "react";
 import { DataContext } from "./context";
 import { reducer, Initial_State, ActionType } from "./reducer";
+import { IContext } from "./interface";
 
-const DataContextProvider4 = ({ children }: { children: React.ReactNode }) => {
+const Provider = ({ children }: { children: React.ReactNode; }) => {
   const [state, dispatch] = useReducer(reducer, Initial_State);
   const [isFirstTime, setIsFirstTime] = useState<boolean>(true);
+
   useEffect(() => {
     function getInitialState() {
       let storage = localStorage.getItem('dataChallenge4') || '';
-      dispatch({ type: ActionType.SET_STATE, payload: storage })
+      dispatch({ type: ActionType.SET_DATA, payload: storage });
       return storage;
     }
     getInitialState();
@@ -21,25 +23,27 @@ const DataContextProvider4 = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     if (!isFirstTime) { // not exist or empty
-      localStorage.setItem('dataChallenge4', state.dataChallenge4);
+      localStorage.setItem('dataChallenge4', state.data);
     }
-  }, [state.dataChallenge4]);
-  const value = {
-    dataChallenge4: state.dataChallenge4,
-    setDataChallenge4: (payload: string) => {
-      dispatch({ type: ActionType.SET_STATE, payload })
+  }, [isFirstTime, state.data]);
+
+  const value: IContext = {
+    data: state.data,
+    setData: (payload: string) => {
+      dispatch({ type: ActionType.SET_DATA, payload });
     },
-    resetDataChallenge4: () => {
+    resetData: () => {
       dispatch({ type: ActionType.RESET_DATA, payload: '' });
     },
-    clearDataChallenge4: () => {
+    clearData: () => {
       dispatch({ type: ActionType.CLEAN_DATA, payload: '' });
     }
   };
+
   return (
     <DataContext.Provider value={value}>
       {children}
     </DataContext.Provider >
-  )
-}
-export default DataContextProvider4;
+  );
+};
+export default Provider;

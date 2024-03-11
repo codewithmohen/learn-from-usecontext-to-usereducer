@@ -1,18 +1,12 @@
 
 import { createContext } from "react";
-
-interface IContext {
-  dataChallenge4: string,
-  setDataChallenge4: (payload: string) => void;
-  resetDataChallenge4: () => void;
-  clearDataChallenge4: () => void;
-}
+import { IContext } from "./interface";
 
 const Initialize: IContext = {
-  dataChallenge4: '',
-  setDataChallenge4: () => { },
-  resetDataChallenge4: () => { },
-  clearDataChallenge4: () => { }
+  data: '',
+  setData: () => { },
+  resetData: () => { },
+  clearData: () => { }
 };
 
 export const DataContext = createContext<IContext>(Initialize);

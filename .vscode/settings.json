@@ -182,7 +182,6 @@
 	"window.menuBarVisibility": "compact",
 	"terminal.integrated.cursorBlinking": true,
 	"terminal.integrated.cursorStyle": "line",
-	"terminal.integrated.enableBell": true,
 	"terminal.integrated.smoothScrolling": true,
 	"terminal.integrated.env.windows": {},
 	"npm.keybindingsChangedWarningShown": true,
@@ -381,13 +380,21 @@
 	"terminal.integrated.allowMnemonics": true,
 	"terminal.integrated.accessibleViewPreserveCursorPosition": true,
 	"terminal.integrated.macOptionClickForcesSelection": true,
-	"audioCues.format": "always",
-	"audioCues.lineHasError": "off",
 	// "apc.sidebar.titlebar": {},
 	"windowColors.🌈 DeleteSettingsFileUponExit": true,
 	"workbench.preferredHighContrastColorTheme": "Improved Snazzy Light",
 	"workbench.preferredHighContrastLightColorTheme": "Improved Snazzy Light",
 	"workbench.preferredLightColorTheme": "Improved Snazzy Light",
 	"windowColors.🌈 Theme": "light",
-	"editor.indentSize": "tabSize"
+	"editor.indentSize": "tabSize",
+	"accessibility.signals.lineHasError": {
+		"sound": "off"
+	},
+	"accessibility.signals.format": {
+		"sound": "always"
+	},
+	"accessibility.signals.terminalBell": {
+		"sound": "on"
+	},
+	"terminal.integrated.enableVisualBell": true
 }

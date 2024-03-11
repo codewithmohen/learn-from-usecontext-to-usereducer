@@ -1,22 +1,27 @@
-'use client'
+'use client';
 import { DataContext } from '@/store/1-usecontext/challenge1/context';
 import { useContext } from 'react';
 export default function Home() {
   const dataManager = useContext(DataContext);
   return (
     <>
-      <h1>setDataChallenge1</h1>
+      <h1>1-useContext / Challenge1</h1>
+      <p>Simple String State + hook setState</p>
+      <br />
       <div >
-        <label htmlFor='#set'>Set To Context: </label>
+        <label htmlFor='#set'>Write to set context</label>
       </div >
       <div>
-        <input id='set' onChange={e => dataManager.setDataChallenge1(e.target.value)}></input>
+        <input id='set' onChange={e => dataManager.setData(e.target.value)}></input>
       </div >
       <br />
-      <div>
-        <label htmlFor='#get'>dataChallenge1</label>
-        <input id='get' value={dataManager.dataChallenge1} readOnly={true} disabled></input>
+      <div >
+        <label htmlFor='#get'>Context value is</label>
+      </div>
+      <div >
+        <input id='get' value={dataManager.data} readOnly={true} disabled></input>
       </div >
+
     </>
-  )
+  );
 }

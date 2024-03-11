@@ -26,7 +26,14 @@ export default function Home() {
             </li>
           </ol>
         </li>
+        <li> Redux Toolkit (comming soon)
+          {/* <ol>
+            <li>
+              <Link href='/3-reduxtoolkit/challenge5'>Simple String State  + Multiple Functions + localStorage</Link>
+            </li>
+          </ol> */}
+        </li>
       </ol>
     </>
-  )
+  );
 }

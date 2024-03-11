@@ -1,47 +1,56 @@
 import { useEffect, useState } from 'react';
 import { DataContext, defaultDataValue } from './context';
 import { state } from './state';
-const DataContextProvider3: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+import { IContext } from './interface';
+const Provider: React.FC<{ children: React.ReactNode; }> = ({ children }) => {
   const [isFirstTime, setIsFirstTime] = useState<boolean>(true);
-  const [dataChallenge3, setDataChallenge3] = state();
+  const [data, setData] = state();
+
   useEffect(() => {
     function getInitialState() {
       return localStorage.getItem('dataChallenge3') || '';
     }
-    setDataChallenge3(getInitialState());
+    setData(getInitialState());
     window.addEventListener('storage', () => {
-      setDataChallenge3(getInitialState());
+      setData(getInitialState());
     });
     setIsFirstTime(false);
-  }, []);
+  }, [setData]);
+
   useEffect(() => {
     if (!isFirstTime) {
       // not exist or empty
-      localStorage.setItem('dataChallenge3', dataChallenge3);
+      localStorage.setItem('dataChallenge3', data);
     }
-  }, [dataChallenge3]);
-  const value = {
-    dataChallenge3: dataChallenge3,
-    setDataChallenge3: setDataChallenge3,
-    setDataChallenge3_2: (input: string) => {
-      setDataChallenge3(input);
+  }, [data, isFirstTime]);
+
+  const value: IContext = {
+    data: data,
+    setData: setData,
+    setData2: (input: string) => {
+      setData(input);
     },
-    setDataChallenge3_3: (input: string) => {
-      setDataChallenge3((prev) => {
+    setData3: (input: string) => {
+      setData((prev) => {
         return input;
       });
     },
-    resetDataChallenge3: () => {
-      setDataChallenge3(() => {
+    resetData: () => {
+      setData(() => {
         return defaultDataValue;
       });
     },
-    clearDataChallenge3: () => {
-      setDataChallenge3(() => {
+    clearData: () => {
+      setData(() => {
         return '';
       });
     },
   };
-  return <DataContext.Provider value={value}>{children}</DataContext.Provider>;
+
+  return (
+    <DataContext.Provider value={value}>
+      {children}
+    </DataContext.Provider>
+  );
 };
-export default DataContextProvider3;
+export default Provider;
